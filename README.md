@@ -27,17 +27,17 @@ Download
 _(Coming soon)_
 ###初始化配置
 下载解压后，进入项目目录，修改package.json中的项目基本信息，然后运行如下命令安装相关包  
-> npm install
+> npm install  
 ###启动内置server
 windows:  
-> set DEBUG=project_name & npm start
+> set DEBUG=project_name & npm start  
 linux/unix and Mac:  
-> DEBUG=project_name npm start
+> DEBUG=project_name npm start  
 ###运行grunt
 运行grunt命令，完成构建任务，项目根目录下运行命令  
-> grunt dev //其他任务请参考Gruntfile
+> grunt dev //其他任务请参考Gruntfile  
 ###监视文件变化，自动构建
-> grunt watch //具体执行的任务，可以在Gruntfile文件中定制
+> grunt watch //具体执行的任务，可以在Gruntfile文件中定制  
 
 ## Examples
 _(Coming soon)_
