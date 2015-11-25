@@ -11,12 +11,12 @@ Download the [production version][min] or the [development version][max].
 [max]: https://raw.github.com/wu/face/master/dist/face.js
 
 ##Dependencies
-> node.js
-> express.js
-> grunt.js
+> node.js  
+> express.js  
+> grunt.js  
 
 ##Futures
-1.集成express
+1. 集成express
 * 支持基于AMD规范的模块化开发
 * 支持js合并、校验、压缩、qunit测试等
 * 支持css预编译语言less
