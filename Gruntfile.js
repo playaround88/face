@@ -84,6 +84,8 @@ module.exports=function(grunt){
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   //定义逻辑任务
+  grunt.registerTask('js',['jshint','concat','uglify','qunit']);
+  grunt.registerTask('css',['less','sprite','cssmin']);
   grunt.registerTask('dev',['less','concat']);
   grunt.registerTask('dist',['cssmin','uglify']);
 
