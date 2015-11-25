@@ -9,6 +9,7 @@ Download
 > git clone https://github.com/playaround88/face.git  
 
 ##Dependencies
+详细的依赖和插件信息，可以查看[package.json](./package.json)
 > node.js  
 > express.js  
 > grunt.js  
