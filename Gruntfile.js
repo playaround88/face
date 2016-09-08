@@ -2,14 +2,14 @@ module.exports=function(grunt){
 
   grunt.initConfig({
     pkg:grunt.file.readJSON('package.json'),
-    //文件合并
+    //文件合并, 只合并通用js
     concat:{
       options:{
         seperator:';'
       },
-      dist:{
-        src:['js_common/**/*.js'],
-        dest:'public/js/<%=pkg.name%>.js'
+      commons:{
+        src:['js/*.js'],
+        dest:'public/js/commons.js'
       }
     },
     //文件压缩
@@ -17,15 +17,25 @@ module.exports=function(grunt){
       options:{
         banner:''
       },
-      build:{
-        src:'<%= concat.dist.dest %>',
-        dest:'public/js/<%= pkg.name %>.min.js'
+      commons:{
+        src:'<%= concat.commons.dest %>',
+        dest:'public/js/commons.min.js'
+      },
+      pages:{
+        files:[{
+          expand: true,     // Enable dynamic expansion.
+          cwd: 'js/page/',      // Src matches are relative to this path.
+          src: ['**/*.js'], // Actual pattern(s) to match.
+          dest: 'public/js/page/',   // Destination path prefix.
+          ext: '.min.js',   // Dest filepaths will have this extension.
+          extDot: 'first'
+        }],
       }
     },
     //js校验
     jshint: {
       // define the files to lint
-      files: ['gruntfile.js', 'js_common/**/*.js', 'test/**/*.js'],
+      files: ['Gruntfile.js', 'js/**/*.js', 'test/**/*.js'],
       options: {
           // more options here if you want to override JSHint defaults
         globals: {
@@ -44,6 +54,18 @@ module.exports=function(grunt){
       compileCore:{
         src:'less/<%= pkg.name %>.less',
         dest:'public/css/<%= pkg.name %>.css'
+      },
+      compilePage:{
+        files: [
+          {
+            expand: true,     // Enable dynamic expansion.
+            cwd: 'less/page/',      // Src matches are relative to this path.
+            src: ['**/*.less'], // Actual pattern(s) to match.
+            dest: 'public/css/page/',   // Destination path prefix.
+            ext: '.css',   // Dest filepaths will have this extension.
+            extDot: 'first'   // Extensions in filenames begin after the first dot
+          }
+        ]
       }
     },
     //自动合成雪碧图
