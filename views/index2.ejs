@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/page/icon.css' />
+    <link rel='stylesheet' href='/css/page/index2.css' />
+    <script type="text/javascript" src="/js/lib/jquery.js"></script>
+    <script type="text/javascript" src="/js/page/index2.min.js"></script>
+  </head>
+  <body>
+    <header>
+    <div id="brand"><img src="/img/logo.png" alt="logo" />智慧营销服务平台</div>
+      <div id="session">
+        <a id="showDate"><span class="icon-calendar"></span><i>2016年09月19日</i></a>
+        <a id="toHome"><span class="icon-home"></span>首页</a>
+        <a><span class="icon-account"></span>超级管理员</a>
+        <a onclick="logout();"><span class="icon-key"></span>退出系统</a>
+      </div>
+    </header>
+    <div id="content">
+      <div id="nav1">
+        <a id="toggle"><span class="icon-unfold"></span></a>
+        <ul class="according">
+          <li>
+            <span class="icon-arrow-right" title="监控中心"></span>
+            <a>监控中心</a>
+            <ul>
+              <li title="实时数据监控" pageto="page/monitoringcenter/monitorhall/monitorCity.jsp">
+              	<span class="icon-data-market"></span><a>实时数据监控</a>
+              </li>
+              <li title="实时战报" pageto="page/monitoringcenter/monitorhall/realtimeReport.jsp">
+              	<span class="icon-gia"></span><a>实时战报</a>
+              </li>
+              <li title="效果实况" pageto="page/monitoringcenter/monitorhall/effectLive.jsp">
+              	<span class="icon-sas"></span><a>效果实况</a>
+              </li>
+              <li title="营销统计" data-toggle="yxtj" pageto="">
+              	<span class="icon-odpsplus"></span><a>营销统计</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span class="icon-arrow-right" title="策略中心"></span>
+            <a>策略中心</a>
+            <ul>
+              <li title="营销活动视图" pageto="page/strategycenter/activity/actList.jsp">
+              	<span class="icon-quickbi"></span><a>营销活动视图</a>
+              </li>
+              <li title="营销活动审批" pageto="page/strategycenter/activity/actApproveList.jsp">
+              	<span class="icon-eia"></span><a>营销活动审批</a>
+              </li>
+              <li title="策略组件优先级" pageto="page/strategycenter/activity/straCompInstPriorityList.jsp">
+              	<span class="icon-galaxy"></span><a>策略组件优先级</a>
+              </li>
+              <li title="渠道接触控制" pageto="page/strategycenter/activity/contactControlList.jsp">
+              	<span class="icon-man-marketing"></span><a>渠道接触控制</a>
+              </li>
+              <li title="产品接触控制" pageto="page/strategycenter/activity/prodControlList.jsp">
+              	<span class="icon-pai"></span><a>产品接触控制</a>
+              </li>
+              <li title="营销活动延期审批" pageto="page/strategycenter/activity/actPostponeApproveList.jsp">
+              	<span class="icon-eia"></span><a>营销活动延期审批</a>
+              </li>
+              <li title="实时计算公式" pageto="page/realtimestrategy/element/elementList.jsp">
+              	<span class="icon-vod"></span><a>实时计算公式</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span class="icon-arrow-right" title="要素管理"></span>
+            <a>要素管理</a>
+			<ul>
+              <li title="营销资源视图" data-toggle="yxzyst" pageto="">
+              	<span class="icon-batchcomputenew"></span><a>营销资源视图</a>
+              </li>
+              <li title="渠道信息管理" data-toggle="qdxxgl" pageto="">
+              	<span class="icon-galaxy"></span><a>渠道信息管理</a>
+              </li>
+              <li title="关键时刻管理" pageto="page/elementsmgnt/keytime/keytimedef/keytimeDefList.jsp">
+              	<span class="icon-et"></span><a>关键时刻管理</a>
+              </li>
+              <li title="内容模板管理" pageto="page/elementsmgnt/contenttpl/contenttpltList.jsp">
+              	<span class="icon-translation"></span><a>内容模板管理</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span class="icon-arrow-right" title="标签管理"></span>
+            <a>标签管理</a>
+            <ul>
+              <li title="名单管理"><span class="icon-man"></span><a>名单管理</a></li>
+              <li title="标签管理"><span class="icon-tag"></span><a>标签管理</a></li>
+              <li title="标签审批"><span class="icon-eia"></span><a>标签审批</a></li>
+            </ul>
+          </li>
+          <li>
+            <span class="icon-arrow-right" title="权限管理"></span>
+            <a>权限管理</a>
+            <ul>
+              <li title="权限管理" pageto="sys/maintenance/org_opor/org_opor.jsp">
+              	<span class="icon-account-2"></span><a>权限管理</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="nav2">
+      	<a id="toggle2"><span class="icon-unfold"></span></a>
+      	<section id="navsec-yxtj">
+          <ul>
+            <li pageto="http://www.baidu.com">营销单流转监控</li>
+            <li>营销执行评估</li>
+            <li>针对性营销</li>
+            <li>营销记录查询</li>
+            <li>协同单查询</li>
+          </ul>
+      	</section>
+        <section id="navsec-yxzyst">
+          <ul>
+            <li>业务产品视图</li>
+            <li>营销结果展示</li>
+          </ul>
+      	</section>
+        <section id="navsec-qdxxgl">
+          <ul>
+            <li>渠道信息</li>
+            <li>短信运营位</li>
+            <li>营业厅渠道</li>
+            <li>网厅渠道</li>
+            <li>行销宝</li>
+          </ul>
+      	</section>
+      </div>
+
+      <div id="main">
+        <div id="message"><b>公告：</b><span>智能营销服务系统将在9.19号进行升级维护</span></div>
+        <iframe id="indexiframe" src="/statics" frameborder=0 height="100%" width="100%">
+        </iframe>
+      </div>
+    </div>
+
+  </body>
+</html>

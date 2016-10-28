@@ -1,0 +1,112 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
+}
+body {
+  margin: 0;
+  padding: 15px;
+}
+.split {
+  display: inline-block;
+  width: 1px;
+  height: 100%;
+  background-color: #e8e8e8;
+  border: none;
+}
+.split-v {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background-color: #e8e8e8;
+  border: none;
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+#userBar {
+  height: 180px;
+  background: white;
+  position: relative;
+  color: #777777;
+}
+#userBar .user {
+  width: 160px;
+  height: 100%;
+  background-color: #f8f8f8;
+  float: left;
+  text-align: center;
+}
+#userBar .user img {
+  margin: 30px auto 20px;
+}
+#userBar .user span {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+}
+#userBar .items {
+  position: absolute;
+  left: 160px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow: hidden;
+  padding: 10px 0px;
+  font-size: 0.875em;
+}
+#userBar .items .item {
+  display: inline-block;
+  height: 160px;
+  width: 16%;
+  float: left;
+  text-align: center;
+}
+#userBar .items .item img {
+  margin: 30px auto 20px;
+}
+#userBar .items .item span {
+  display: block;
+  margin: 10px auto;
+}
+#userBar .items .item a {
+  display: block;
+}
+#content {
+  margin-top: 15px;
+  overflow: hidden;
+}
+#userTasks {
+  overflow: hidden;
+  background: white;
+  padding: 15px;
+}
+.title {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 0.875em;
+}
+#sideBar {
+  width: 320px;
+  float: right;
+  margin-left: 15px;
+}
+#sideBar .sideItem {
+  padding: 15px;
+  background: white;
+  margin-bottom: 15px;
+}

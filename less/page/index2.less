@@ -1,0 +1,231 @@
+@gray-base:              #000;
+@gray-darker:            lighten(@gray-base, 13.5%); // #222
+@gray-dark:              lighten(@gray-base, 20%);   // #333
+@gray:                   lighten(@gray-base, 33.5%); // #555
+@gray-light:             lighten(@gray-base, 46.7%); // #777
+@gray-lighter:           lighten(@gray-base, 93.5%); // #eee
+
+@brand-base:             #5560a8;
+@brand-darker:           #4e599c;
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+  font-family : "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: @gray-dark;
+  overflow: hidden;
+}
+
+header{
+  height: 50px;
+  padding: 0px 20px;
+  background: @brand-base;
+  color: white;
+  overflow: hidden;
+
+  #brand{
+    height: 100%;
+    line-height: 50px;
+    float: left;
+
+    font-size: 1.125em; // 18px
+    font-family: "黑体";
+
+    img{
+      vertical-align: middle;
+      margin-right: 15px;
+    }
+  }//--brand
+
+  #session{
+    height: 100%;
+    line-height: 50px;
+    float: right;
+    font-size: 0.8125em; // 13px/16px
+
+    a{
+      display:inline-block;
+      cursor: pointer;
+      padding: 0px 10px;
+
+      &:hover{
+        background-color: @brand-darker;
+      }
+    }
+
+    span{
+      font-size:1.23em; // 16px/13px
+      margin-right:5px;
+      vertical-align: middle;
+    }
+  }//--session
+}
+
+#content{
+  position: absolute;
+  left: 0px;
+  top: 50px;
+  right: 0px;
+  bottom: 0px;
+
+  #nav1{
+    width: 180px;
+    height: 100%;
+    background: #1c2c36;
+    float:left;
+
+    color:white;
+    font-size: 0.875em; // 14px
+
+    &.closed{
+      width:50px;
+      text-align: center;
+
+      a{
+        display: none;
+      }
+
+      ul.according{
+        & > li > span{
+          margin: 0px;
+        }
+
+        & > li > ul > li{
+          padding: 0px;
+        }
+      }
+
+    }
+
+    #toggle{
+      display: block;
+      height:30px;
+      line-height: 30px;
+      background-color: #263b49;
+      cursor: pointer;
+      text-align: center;
+      border: 1px solid @gray-dark;
+    }
+
+  }
+
+  #nav2{
+    width: 180px;
+    height: 100%;
+    float:left;
+    color:@gray-dark;
+    font-size: 0.875em;
+    display: none;
+    border-right: 1px solid @gray-light;
+
+    #toggle2{
+      display: block;
+      height:30px;
+      line-height: 30px;
+      background-color: @gray-light;
+      cursor: pointer;
+      text-align: center;
+      border: 1px solid @gray;
+    }
+
+    section{
+      display: none;
+
+      ul{
+        padding: 0px;
+        margin: 0px;
+
+        li{
+          list-style: none;
+          padding-left: 20px;
+          line-height: 35px;
+          border-bottom: 1px solid @gray-lighter;
+
+          &:hover{
+            background-color: lighten(@brand-base, 10%);
+            color: white;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  #main{
+    height: 100%;
+    overflow: hidden;
+    background: #e9edf1;
+
+    #message{
+      height: 30px;
+      padding: 0px 20px;
+      line-height: 30px;
+      background-color: white;
+      font-size:0.75em;
+    }
+  }
+
+}
+
+ul.according{
+  margin: 0;
+  padding: 0;
+
+  & > li{
+    list-style: none;
+    cursor: pointer;
+    border-bottom: 1px dashed @gray-dark;
+    background-color: #263b49;
+
+    & > a, & > span{
+      line-height: 40px;
+      margin-left: 10px;
+    }
+
+    & > ul{
+      margin: 0;
+      padding: 0;
+      background-color: @gray-dark;
+      display: none;
+
+      & > li{
+        line-height: 35px;
+        padding-left: 20px;
+        cursor: pointer;
+        list-style: none;
+
+        & > a{
+          margin-left: 10px;
+        }
+
+        & > ul{
+          display:none;
+
+        }
+
+        &:hover{
+          background-color: @brand-base;
+
+          & > a::after{
+            content: "Ξ";
+            float: right;
+            margin-right: 20px;
+          }
+        }
+
+      } // li
+
+    } //ul
+
+
+  } //li
+
+} //ul

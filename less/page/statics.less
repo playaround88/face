@@ -1,0 +1,128 @@
+@gray-base:              #000;
+@gray-darker:            lighten(@gray-base, 13.5%); // #222
+@gray-dark:              lighten(@gray-base, 20%);   // #333
+@gray:                   lighten(@gray-base, 33.5%); // #555
+@gray-light:             lighten(@gray-base, 46.7%); // #777
+@gray-lighter:           lighten(@gray-base, 93.5%); // #eee
+
+//common
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+  font-family : "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
+}
+
+body{
+  margin: 0;
+  padding: 15px;
+}
+
+.split{
+  display: inline-block;
+  width: 1px;
+  height:100%;
+  background-color: #e8e8e8;
+  border: none;
+}
+.split-v{
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background-color: #e8e8e8;
+  border: none;
+}
+.pull-left{
+  float:left;
+}
+.pull-right{
+  float:right;
+}
+
+//page
+#userBar{
+  height: 180px;
+  background: white;
+  position: relative;
+  color: @gray-light;
+
+  .user{
+    width: 160px;
+    height: 100%;
+    background-color: #f8f8f8;
+    float: left;
+    text-align: center;
+
+    img{
+      margin: 30px auto 20px;
+    }
+    span{
+      display: block;
+      text-align: center;
+      margin: 10px auto;
+    }
+  }
+
+  .items{
+    position: absolute;
+    left: 160px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: hidden;
+    padding: 10px 0px;
+    font-size: 0.875em;
+
+    .item{
+      display: inline-block;
+      height:160px;
+      width: 16%;
+      float:left;
+      text-align: center;
+
+      img{
+        margin: 30px auto 20px;
+      }
+
+      span{
+        display: block;
+        margin: 10px auto;
+      }
+      a{
+        display: block;
+      }
+    }
+  }
+}
+
+#content{
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+#userTasks{
+  overflow: hidden;
+  background: white;
+  padding: 15px;
+
+}
+
+.title{
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 0.875em;
+}//-- title
+
+.sub-title{
+
+}//--sub-title
+
+#sideBar{
+  width: 320px;
+  float: right;
+  margin-left: 15px;
+
+  .sideItem{
+    padding: 15px;
+    background:white;
+    margin-bottom:15px;
+  }
+}
