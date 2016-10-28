@@ -2,13 +2,26 @@ module.exports=function(grunt){
 
   grunt.initConfig({
     pkg:grunt.file.readJSON('package.json'),
+    //js校验
+    jshint: {
+      // define the files to lint
+      files: ['Gruntfile.js', 'js/**/*.js'],
+      options: {
+          // more options here if you want to override JSHint defaults
+        globals: {
+          jQuery: true,
+          console: true,
+          module: true
+        }
+      }
+    },
     //文件合并, 只合并通用js
     concat:{
       options:{
         seperator:';'
       },
       commons:{
-        src:['js/*.js'],
+        src:['js/commons/*.js'],
         dest:'public/js/commons.js'
       }
     },
@@ -32,23 +45,10 @@ module.exports=function(grunt){
         }],
       }
     },
-    //js校验
-    jshint: {
-      // define the files to lint
-      files: ['Gruntfile.js', 'js/**/*.js', 'test/**/*.js'],
-      options: {
-          // more options here if you want to override JSHint defaults
-        globals: {
-          jQuery: true,
-          console: true,
-          module: true
-        }
-      }
-    },
     //qunit测试
-    qunit: {
-      files: ['test/**/*.html']
-    },
+    //qunit: {
+    //  files: ['test/**/*.html']
+    //},
     //less编译
     less:{
       compileCore:{
@@ -84,12 +84,12 @@ module.exports=function(grunt){
       }
     },
     watch:{
-      files:['Gruntfile.js','js_common/**/*.js','less/**/*.less'],
-      tasks:['less','concat']
+      files:['Gruntfile.js','js/**/*.js','less/**/*.less'],
+      tasks:['less','jshint','concat','uglify']
     },
     clean: {
-      js: ['<%= concat.dist.dest %>','<%= uglify.build.dest %>'],//"!path/to/dir/*.min.js"
-      css:['<%= less.compileCore.dest %>','<%= cssmin.target.dest %>','<%= sprite.all.destCss %>'],
+      js: ['<%= concat.commons.dest %>','<%= uglify.commons.dest %>','<%= uglify.pages.dest %>'],//"!path/to/dir/*.min.js"
+      css:['<%= less.compileCore.dest %>','<%= less.compilePage.dest %>','<%= cssmin.target.dest %>','<%= sprite.all.destCss %>'],
       icon:['<%= sprite.all.dest %>']
     }
   });
@@ -98,7 +98,6 @@ module.exports=function(grunt){
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-spritesmith');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -106,7 +105,7 @@ module.exports=function(grunt){
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   //定义逻辑任务
-  grunt.registerTask('js',['jshint','concat','uglify','qunit']);
+  grunt.registerTask('js',['jshint','concat','uglify']);
   grunt.registerTask('css',['less','sprite','cssmin']);
   grunt.registerTask('dev',['less','concat']);
   grunt.registerTask('dist',['cssmin','uglify']);
