@@ -1,10 +1,10 @@
 @font-face{
   font-family:'aliyun-console-font';
-  src:url("../fonts/aliyun-console-font.eot");
-  src:url("../fonts/aliyun-console-font.eot") format("embedded-opentype")
-    ,url("../fonts/aliyun-console-font.ttf") format("truetype")
-    ,url("../fonts/aliyun-console-font.woff") format("woff")
-    ,url("../fonts/aliyun-console-font.svg") format("svg");
+  src:url("aliyun-console-font.eot");
+  src:url("aliyun-console-font.eot") format("embedded-opentype")
+    ,url("aliyun-console-font.ttf") format("truetype")
+    ,url("aliyun-console-font.woff") format("woff")
+    ,url("aliyun-console-font.svg") format("svg");
   font-weight:normal;
   font-style:normal
 }
